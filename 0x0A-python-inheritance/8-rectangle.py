@@ -1,40 +1,21 @@
 #!/usr/bin/python3
 """
-module defines a class
+Module 8-rectangle
+inherits from class BaseGeometry
+and initializes
 """
 
 
-class BaseGeometry:
-    """
-    define module area
-    """
-
-    def area(self):
-        raise Exception("area() is not implemented")
-
-    """
-    define methode integer_validator
-    """
-
-    def integer_validator(self, name, value):
-        """
-        function to validates an integer
-        """
-
-        if type(value) != int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{:s} must be greater than 0".format(name))
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """
-    defining class rectangle modules
-    """
-
+    """inherits frpm BaseGeometry"""
     def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-
+        """
+        initialization of width and height
+        """
+        super().integer_validator("width", width)
         self.__width = width
+        super().integer_validator("height", height)
         self.__height = height
