@@ -1,6 +1,8 @@
 #!/usr/bin/node
-// Concatenates file passd as arguments into output file, also arg.
-const fs = require('fs');
-const data1 = fs.readFileSync(process.argv[2], 'utf-8');
-const data2 = fs.readFileSync(process.argv[3], 'utf-8');
-fs.writeFileSync(process.argv[4], data1 + data2, 'utf-8');
+const fileA = process.argv[2];
+const fileB = process.argv[3];
+const fileC = process.argv[4];
+const fs = require('fs');// create fs module function through keyword require
+const textA = fs.readFileSync(fileA, 'utf8');// read the original content in fileA
+const textB = fs.readFileSync(fileB, 'utf8');// read the original content in fileB
+fs.writeFileSync(fileC, textA + textB);// Write content
