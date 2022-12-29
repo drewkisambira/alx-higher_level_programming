@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 """
-module to define a function
+Module 4-append_write
+Contains function that appends to text file and returns num chars added
 """
 
 
 def append_write(filename="", text=""):
-    """function to addend text
-    to file
-    """
-
-    with open(filename, "a", encoding="utf8") as f:
-        return f.write(text)
+    """appends to text file and returns num chars added"""
+    with open(filename, mode="a", encoding="utf-8") as f:
+        return(f.write(text))
