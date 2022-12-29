@@ -1,26 +1,23 @@
 #!/usr/bin/python3
-"""module to define a function
+"""
+Module 12-pascal_triangle
 """
 
 
 def pascal_triangle(n):
-    """function that returns a list
-    of list of ints representing
-    pascal's triangle of n
     """
-
-    res = []
+    Returns pascal's trangle(list of lists of integers)
+    or an empty list if n <= 0
+    """
     if n <= 0:
-        return res
-    for i in range(n):
-        row = []
-        for j in range(i + 1):
-            top_left = 1 if i == 0 else 0
-            top_right = 0
-            if (i > 0) and (j > 0):
-                top_left = res[i - 1][j - 1]
-            if (i > 0) and (j < len(res[i - 1])):
-                top_right = res[i - 1][j]
-            row.append(top_left + top_right)
-        res.append(row)
-    return res
+        return []
+
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
