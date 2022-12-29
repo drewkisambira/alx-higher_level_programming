@@ -1,16 +1,12 @@
 #!/usr/bin/python3
 """
-module to define function
+Module 6-from_json_string
+Contains function that returns python data structure from JSON string
 """
 
 
-import json
-
-
 def from_json_string(my_str):
-    """
-    function retruns an object represented
-    by a JSON string
-    """
+    """Returns python data structure from JSON string"""
+    import json
 
     return json.loads(my_str)
