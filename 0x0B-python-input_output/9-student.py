@@ -1,23 +1,19 @@
 #!/usr/bin/python3
-"""module to  define a class
+"""
+Module 9-student
+Defines a student by public instance attributes:
+first_name, last_name and age
 """
 
 
 class Student:
-    """define methods for the student class
-    """
-
+    """class Student"""
     def __init__(self, first_name, last_name, age):
-        """__init__ method
-        """
-
+        """initialization"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """
-        method that retrieves a dict rep of student
-        """
-
+        """etrieves a dict representation of a Student instance"""
         return self.__dict__

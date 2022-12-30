@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 """
-function to read text
+Module 0-read_file
+Contains function that reads and prints contents from file
 """
 
 
 def read_file(filename=""):
-    """
-    read from filename
-    """
-
-    with open(filename, "r", encoding="utf8") as f:
-        for line in f:
-            print(line, end='')
+    """Read and print text from file"""
+    with open(filename, mode="r", encoding="utf-8") as f:
+        print(f.read(), end="")
